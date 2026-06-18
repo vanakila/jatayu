@@ -26,6 +26,7 @@ export default async function BeritaPage() {
               title={post.title}
               excerpt={post.excerpt}
               createdAt={post.createdAt}
+              coverImage={post.coverImage}
             />
           ))}
         </div>

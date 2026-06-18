@@ -65,6 +65,7 @@ export default async function HomePage() {
                 title={post.title}
                 excerpt={post.excerpt}
                 createdAt={post.createdAt}
+                coverImage={post.coverImage}
               />
             ))}
           </div>
@@ -90,6 +91,7 @@ export default async function HomePage() {
                 title={post.title}
                 excerpt={post.excerpt}
                 createdAt={post.createdAt}
+                coverImage={post.coverImage}
               />
             ))}
           </div>
