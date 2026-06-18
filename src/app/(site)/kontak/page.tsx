@@ -13,8 +13,8 @@ export default function KontakPage() {
         <div>
           <p className="text-sm font-semibold text-gray-500">Alamat</p>
           <p className="text-gray-800">
-            Pondok Modern Sumber Daya Atstaqwa (Pomosda), Jl. Raya Sumber Bening, Sumberbening,
-            Nganjuk, Jawa Timur
+            Pondok Modern Sumber Daya At-Taqwa (POMOSDA), Jl. KH Wachid Hasyim No. 312,
+            Tanjunganom, Kabupaten Nganjuk, Jawa Timur
           </p>
         </div>
         <div>

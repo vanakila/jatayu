@@ -12,8 +12,8 @@ export default function Footer() {
           </div>
           <div>
             <p className="font-bold text-yellow-400">Kontak</p>
-            <p className="mt-1">Pondok Modern Sumber Daya Atstaqwa (Pomosda)</p>
-            <p>Jl. Raya Sumber Bening, Sumberbening, Nganjuk, Jawa Timur</p>
+            <p className="mt-1">Pondok Modern Sumber Daya At-Taqwa (POMOSDA)</p>
+            <p>Jl. KH Wachid Hasyim No. 312, Tanjunganom, Kabupaten Nganjuk, Jawa Timur</p>
             <p>info@jatayupomosda.id</p>
           </div>
           <div>
