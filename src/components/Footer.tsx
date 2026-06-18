@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="grid gap-6 md:grid-cols-3">
           <div>
             <p className="font-bold text-yellow-400">JATAYU POMOSDA</p>
-            <p className="mt-1">Cakra Surya Dinata</p>
+            <p className="mt-1">Jamaah Tatanan Wahyu</p>
             <p className="mt-2 text-gray-400">
               Alkitab-Jamaah &middot; Alhikmah-Tatanan &middot; Annubuwah-Wahyu
             </p>
