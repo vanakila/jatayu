@@ -2,15 +2,13 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { saveUploadedFile } from "@/lib/upload";
 
 export async function createGalleryImage(formData: FormData) {
-  const file = formData.get("image") as File | null;
+  const url = formData.get("url") as string;
   const caption = (formData.get("caption") as string) || null;
 
-  if (!file || file.size === 0) return;
+  if (!url) return;
 
-  const url = await saveUploadedFile(file);
   await prisma.galleryImage.create({ data: { url, caption } });
 
   revalidatePath("/galeri");

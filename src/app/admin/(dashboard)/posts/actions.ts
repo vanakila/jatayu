@@ -3,7 +3,6 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { saveUploadedFile } from "@/lib/upload";
 import { slugify } from "@/lib/types";
 
 function revalidatePublicPaths(type: string, slug?: string) {
@@ -18,12 +17,7 @@ export async function createPost(formData: FormData) {
   const excerpt = (formData.get("excerpt") as string) || null;
   const content = formData.get("content") as string;
   const published = formData.get("published") === "on";
-  const coverFile = formData.get("coverImage") as File | null;
-
-  let coverImage: string | null = null;
-  if (coverFile && coverFile.size > 0) {
-    coverImage = await saveUploadedFile(coverFile);
-  }
+  const coverImage = (formData.get("coverImage") as string) || null;
 
   const baseSlug = slugify(title);
   let slug = baseSlug;
@@ -48,12 +42,7 @@ export async function updatePost(id: string, formData: FormData) {
   const excerpt = (formData.get("excerpt") as string) || null;
   const content = formData.get("content") as string;
   const published = formData.get("published") === "on";
-  const coverFile = formData.get("coverImage") as File | null;
-
-  let coverImage = existing.coverImage;
-  if (coverFile && coverFile.size > 0) {
-    coverImage = await saveUploadedFile(coverFile);
-  }
+  const coverImage = (formData.get("coverImage") as string) || existing.coverImage;
 
   await prisma.post.update({
     where: { id },

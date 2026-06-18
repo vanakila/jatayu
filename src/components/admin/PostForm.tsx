@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 type PostFormProps = {
   action: (formData: FormData) => void;
   defaultValues?: {
@@ -14,6 +16,29 @@ type PostFormProps = {
 };
 
 export default function PostForm({ action, defaultValues, submitLabel }: PostFormProps) {
+  const [coverImage, setCoverImage] = useState(defaultValues?.coverImage ?? "");
+  const [uploading, setUploading] = useState(false);
+
+  async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    try {
+      const body = new FormData();
+      body.append("file", file);
+      const res = await fetch("/api/upload", { method: "POST", body });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+      setCoverImage(data.url);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Gagal upload gambar");
+      e.target.value = "";
+    } finally {
+      setUploading(false);
+    }
+  }
+
   return (
     <form action={action} className="max-w-2xl space-y-4">
       <div>
@@ -62,19 +87,22 @@ export default function PostForm({ action, defaultValues, submitLabel }: PostFor
 
       <div>
         <label className="block text-sm font-medium text-gray-700">Gambar Sampul</label>
-        {defaultValues?.coverImage && (
+        {coverImage && (
           <img
-            src={defaultValues.coverImage}
+            src={coverImage}
             alt="Sampul saat ini"
             className="mt-2 h-32 w-auto rounded-md border border-gray-200"
           />
         )}
+        <input type="hidden" name="coverImage" value={coverImage} />
         <input
           type="file"
-          name="coverImage"
           accept="image/*"
+          onChange={handleFileChange}
+          disabled={uploading}
           className="mt-1 block w-full text-sm"
         />
+        {uploading && <p className="mt-1 text-sm text-gray-500">Mengupload gambar...</p>}
       </div>
 
       <div className="flex items-center gap-2">
@@ -92,7 +120,8 @@ export default function PostForm({ action, defaultValues, submitLabel }: PostFor
 
       <button
         type="submit"
-        className="rounded-md bg-yellow-500 px-5 py-2 font-semibold text-black hover:bg-yellow-400"
+        disabled={uploading}
+        className="rounded-md bg-yellow-500 px-5 py-2 font-semibold text-black hover:bg-yellow-400 disabled:opacity-50"
       >
         {submitLabel}
       </button>
