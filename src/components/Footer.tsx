@@ -14,7 +14,8 @@ export default function Footer() {
             <p className="font-bold text-yellow-400">Kontak</p>
             <p className="mt-1">Pondok Modern Sumber Daya At-Taqwa (POMOSDA)</p>
             <p>Jl. KH Wachid Hasyim No. 312, Tanjunganom, Kabupaten Nganjuk, Jawa Timur</p>
-            <p>info@jatayupomosda.id</p>
+            <p>yayasanylm@gmail.com</p>
+            <p>+62 852-3291-2963</p>
           </div>
           <div>
             <p className="font-bold text-yellow-400">Tautan</p>

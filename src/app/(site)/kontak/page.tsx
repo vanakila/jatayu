@@ -19,11 +19,11 @@ export default function KontakPage() {
         </div>
         <div>
           <p className="text-sm font-semibold text-gray-500">Email</p>
-          <p className="text-gray-800">info@jatayupomosda.id</p>
+          <p className="text-gray-800">yayasanylm@gmail.com</p>
         </div>
         <div>
           <p className="text-sm font-semibold text-gray-500">Telepon / WhatsApp</p>
-          <p className="text-gray-800">+62 812-0000-0000</p>
+          <p className="text-gray-800">+62 852-3291-2963</p>
         </div>
       </div>
     </div>
