@@ -78,6 +78,16 @@ async function main() {
     },
   });
 
+  await prisma.profile.upsert({
+    where: { id: "main-profile" },
+    update: {},
+    create: {
+      id: "main-profile",
+      content:
+        "Pondok Jatayu Pomosda merupakan bagian dari Pondok Modern Sumber Daya At-Taqwa (Pomosda) yang menaungi satuan organisasi santri bernama Cakra Surya Dinata. Lambang ini menjadi identitas dan pedoman nilai bagi seluruh civitas pondok dalam menjalankan kehidupan berasrama, belajar, dan berorganisasi.\n\nVisi\nMewujudkan generasi santri yang berakhlak mulia, berilmu, dan mampu menjadi teladan di tengah masyarakat dengan berpegang pada nilai-nilai keislaman dan kebangsaan.\n\nMisi\n1. Menyelenggarakan pendidikan agama dan umum secara seimbang.\n2. Membentuk karakter santri yang disiplin, mandiri, dan bertanggung jawab.\n3. Mengembangkan kemampuan kepemimpinan dan organisasi melalui kegiatan kesantrian.\n4. Menjaga kelestarian nilai-nilai tradisi pesantren yang relevan dengan zaman.\n\nFilosofi Lambang\nTiga pilar utama dalam lambang Cakra Surya Dinata -- Alkitab-Jamaah, Alhikmah-Tatanan, dan Annubuwah-Wahyu -- menjadi landasan filosofis yang dipegang erat dalam setiap aspek kehidupan di pondok, mulai dari kegiatan belajar mengajar hingga praktik berorganisasi sehari-hari.",
+    },
+  });
+
   console.log("Seed selesai. Admin login: admin@jatayupomosda.id / jatayu123");
 }
 

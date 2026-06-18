@@ -33,3 +33,9 @@ model GalleryImage {
   caption   String?
   createdAt DateTime @default(now())
 }
+
+model Profile {
+  id        String   @id @default(cuid())
+  content   String
+  updatedAt DateTime @updatedAt
+}
