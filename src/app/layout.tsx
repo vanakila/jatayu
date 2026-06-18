@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jatayu.pomosda.id"),
   title: "Pondok Jatayu Pomosda",
   description:
     "Website resmi Pondok Jatayu Pomosda - Cakra Surya Dinata. Berita, artikel, dan informasi seputar kegiatan pondok.",
