@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import PostCard from "@/components/PostCard";
 import HeroSlider from "@/components/HeroSlider";
+import SocialLinks from "@/components/SocialLinks";
 
 export default async function HomePage() {
   const [berita, artikel, slides] = await Promise.all([
@@ -21,6 +22,8 @@ export default async function HomePage() {
   return (
     <div>
       <HeroSlider images={slides.map((s) => s.imageUrl)} />
+
+      <SocialLinks />
 
       <section className="mx-auto max-w-6xl px-4 py-12">
         <div className="mb-6 flex items-center justify-between">

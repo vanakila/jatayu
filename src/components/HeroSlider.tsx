@@ -26,7 +26,7 @@ export default function HeroSlider({ images }: { images: string[] }) {
           className="absolute inset-0 transition-opacity duration-700"
           style={{ opacity: i === active ? 1 : 0 }}
         >
-          <Image src={src} alt="" fill priority={i === 0} className="object-cover" />
+          <Image src={src} alt="" fill sizes="100vw" priority={i === 0} className="object-cover" />
         </div>
       ))}
       {images.length > 1 && (
