@@ -6,9 +6,6 @@ export default function Footer() {
           <div>
             <p className="font-bold text-yellow-400">JATAYU POMOSDA</p>
             <p className="mt-1">Jamaah Tatanan Wahyu</p>
-            <p className="mt-2 text-gray-400">
-              Alkitab-Jamaah &middot; Alhikmah-Tatanan &middot; Annubuwah-Wahyu
-            </p>
           </div>
           <div>
             <p className="font-bold text-yellow-400">Kontak</p>
@@ -20,9 +17,13 @@ export default function Footer() {
           <div>
             <p className="font-bold text-yellow-400">Tautan</p>
             <ul className="mt-1 space-y-1">
+              <li><a href="/" className="hover:text-yellow-400">Beranda</a></li>
               <li><a href="/profil" className="hover:text-yellow-400">Profil Pondok</a></li>
+              <li><a href="/profil/visi-misi" className="hover:text-yellow-400">Visi dan Misi</a></li>
               <li><a href="/berita" className="hover:text-yellow-400">Berita</a></li>
               <li><a href="/artikel" className="hover:text-yellow-400">Artikel</a></li>
+              <li><a href="/galeri" className="hover:text-yellow-400">Galeri</a></li>
+              <li><a href="/kontak" className="hover:text-yellow-400">Kontak</a></li>
               <li><a href="/admin/login" className="hover:text-yellow-400">Admin</a></li>
             </ul>
           </div>
