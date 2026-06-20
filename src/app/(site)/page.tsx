@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import PostCard from "@/components/PostCard";
+import HeroSlider from "@/components/HeroSlider";
 
 export default async function HomePage() {
-  const [berita, artikel] = await Promise.all([
+  const [berita, artikel, slides] = await Promise.all([
     prisma.post.findMany({
       where: { type: "BERITA", published: true },
       orderBy: { createdAt: "desc" },
@@ -15,36 +15,12 @@ export default async function HomePage() {
       orderBy: { createdAt: "desc" },
       take: 3,
     }),
+    prisma.heroSlide.findMany({ orderBy: { createdAt: "asc" } }),
   ]);
 
   return (
     <div>
-      <section className="bg-black text-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center">
-          <Image src="/logo.png" alt="Logo Jatayu Pomosda" width={120} height={120} />
-          <h1 className="text-3xl font-bold text-yellow-400 sm:text-4xl">
-            Pondok Jatayu Pomosda
-          </h1>
-          <p className="max-w-2xl text-gray-300">
-            Cakra Surya Dinata &mdash; berlandaskan Alkitab-Jamaah, Alhikmah-Tatanan, dan
-            Annubuwah-Wahyu dalam mendidik generasi santri yang berakhlak dan berilmu.
-          </p>
-          <div className="flex gap-3">
-            <Link
-              href="/profil"
-              className="rounded-md bg-yellow-500 px-5 py-2 font-semibold text-black transition hover:bg-yellow-400"
-            >
-              Profil Pondok
-            </Link>
-            <Link
-              href="/kontak"
-              className="rounded-md border border-yellow-500 px-5 py-2 font-semibold text-yellow-400 transition hover:bg-yellow-500 hover:text-black"
-            >
-              Kontak Kami
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSlider images={slides.map((s) => s.imageUrl)} />
 
       <section className="mx-auto max-w-6xl px-4 py-12">
         <div className="mb-6 flex items-center justify-between">
