@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,16 +27,19 @@ const links: NavLink[] = [
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 bg-black text-white border-b-2 border-yellow-500">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image src="/logo.png" alt="Logo Jatayu Pomosda" width={44} height={44} />
           <div className="leading-tight">
             <p className="text-xl font-bold text-yellow-400 tracking-wide">JATAYU</p>
             <p className="text-xs text-gray-300">Jamaah Tatanan Wahyu</p>
           </div>
         </Link>
+
         <nav className="hidden gap-6 text-sm font-medium md:flex">
           {links.map((link) =>
             link.children ? (
@@ -68,20 +74,41 @@ export default function Navbar() {
             ),
           )}
         </nav>
+
+        <button
+          type="button"
+          aria-label="Buka menu"
+          onClick={() => setOpen((v) => !v)}
+          className="flex h-9 w-9 items-center justify-center text-gray-200 md:hidden"
+        >
+          {open ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">
+              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">
+              <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
+            </svg>
+          )}
+        </button>
       </div>
-      <nav className="flex flex-wrap justify-center gap-4 border-t border-yellow-900/40 px-4 py-2 text-xs font-medium md:hidden">
-        {links
-          .flatMap((link) => link.children ?? [link])
-          .map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-gray-200 transition hover:text-yellow-400"
-            >
-              {link.label}
-            </Link>
-          ))}
-      </nav>
+
+      {open && (
+        <nav className="flex flex-col gap-1 border-t border-yellow-900/40 px-4 py-3 text-sm font-medium md:hidden">
+          {links
+            .flatMap((link) => link.children ?? [link])
+            .map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-2 text-gray-200 transition hover:bg-yellow-500/10 hover:text-yellow-400"
+              >
+                {link.label}
+              </Link>
+            ))}
+        </nav>
+      )}
     </header>
   );
 }
