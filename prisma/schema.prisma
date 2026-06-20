@@ -39,3 +39,9 @@ model Profile {
   content   String
   updatedAt DateTime @updatedAt
 }
+
+model VisiMisi {
+  id        String   @id @default(cuid())
+  content   String
+  updatedAt DateTime @updatedAt
+}

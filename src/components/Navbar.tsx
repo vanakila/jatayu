@@ -1,9 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const links = [
+type NavLink = {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+};
+
+const links: NavLink[] = [
   { href: "/", label: "Beranda" },
-  { href: "/profil", label: "Profil" },
+  {
+    href: "/profil",
+    label: "Profil",
+    children: [
+      { href: "/profil", label: "Profil Pondok" },
+      { href: "/profil/visi-misi", label: "Visi dan Misi" },
+    ],
+  },
   { href: "/berita", label: "Berita" },
   { href: "/artikel", label: "Artikel" },
   { href: "/galeri", label: "Galeri" },
@@ -22,7 +35,44 @@ export default function Navbar() {
           </div>
         </Link>
         <nav className="hidden gap-6 text-sm font-medium md:flex">
-          {links.map((link) => (
+          {links.map((link) =>
+            link.children ? (
+              <div key={link.href} className="group relative">
+                <Link
+                  href={link.href}
+                  className="flex items-center gap-1 py-2 text-gray-200 transition hover:text-yellow-400"
+                >
+                  {link.label}
+                  <span className="text-[10px]">&#9662;</span>
+                </Link>
+                <div className="invisible absolute left-0 top-full z-50 min-w-[180px] rounded-md border border-yellow-900/40 bg-black py-1 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+                  {link.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      className="block px-4 py-2 text-gray-200 transition hover:bg-yellow-500/10 hover:text-yellow-400"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="py-2 text-gray-200 transition hover:text-yellow-400"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
+        </nav>
+      </div>
+      <nav className="flex flex-wrap justify-center gap-4 border-t border-yellow-900/40 px-4 py-2 text-xs font-medium md:hidden">
+        {links
+          .flatMap((link) => link.children ?? [link])
+          .map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -31,18 +81,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-        </nav>
-      </div>
-      <nav className="flex flex-wrap justify-center gap-4 border-t border-yellow-900/40 px-4 py-2 text-xs font-medium md:hidden">
-        {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="text-gray-200 transition hover:text-yellow-400"
-          >
-            {link.label}
-          </Link>
-        ))}
       </nav>
     </header>
   );
