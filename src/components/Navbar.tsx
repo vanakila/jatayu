@@ -30,7 +30,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.png" alt="Logo Jatayu Pomosda" width={44} height={44} />
           <div className="leading-tight">
-            <p className="font-bold text-yellow-400 tracking-wide">JATAYU POMOSDA</p>
+            <p className="text-xl font-bold text-yellow-400 tracking-wide">JATAYU</p>
             <p className="text-xs text-gray-300">Jamaah Tatanan Wahyu</p>
           </div>
         </Link>
