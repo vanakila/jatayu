@@ -2,6 +2,7 @@ const socials = [
   {
     label: "YouTube",
     href: "https://www.youtube.com/channel/UCrQTojVP6NYbsbPTwbKPapQ",
+    bg: "bg-[#FF0000]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
         <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6Z" />
@@ -11,6 +12,7 @@ const socials = [
   {
     label: "Facebook",
     href: "#",
+    bg: "bg-[#1877F2]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
         <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1 0 2.1.2 2.1.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z" />
@@ -20,6 +22,7 @@ const socials = [
   {
     label: "TikTok",
     href: "https://www.tiktok.com/@romokiaitanjungofficial",
+    bg: "bg-black",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
         <path d="M16.6 2h-3.2v13.7a3 3 0 1 1-2.1-2.9V9.6a6.2 6.2 0 1 0 5.3 6.1V8.4a8.2 8.2 0 0 0 4.8 1.5V6.7a4.8 4.8 0 0 1-4.8-4.7Z" />
@@ -29,6 +32,7 @@ const socials = [
   {
     label: "Instagram",
     href: "#",
+    bg: "bg-gradient-to-tr from-[#FEDA75] via-[#D62976] to-[#4F5BD5]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
         <path d="M12 2.2c2.7 0 3 0 4.1.1 1 0 1.6.2 2 .4.5.2.9.4 1.2.8.4.3.6.7.8 1.2.2.4.4 1 .4 2 .1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.6-.4 2-.2.5-.4.9-.8 1.2-.3.4-.7.6-1.2.8-.4.2-1 .4-2 .4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.6-.2-2-.4-.5-.2-.9-.4-1.2-.8-.4-.3-.6-.7-.8-1.2-.2-.4-.4-1-.4-2-.1-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c0-1 .2-1.6.4-2 .2-.5.4-.9.8-1.2.3-.4.7-.6 1.2-.8.4-.2 1-.4 2-.4 1.1-.1 1.4-.1 4.1-.1ZM12 0C9.3 0 8.9 0 7.8.1c-1.2 0-2 .2-2.7.5-.8.3-1.4.7-2 1.3-.6.6-1 1.2-1.3 2-.3.7-.5 1.5-.5 2.7C1.2 7.7 1.2 8.1 1.2 12s0 4.3.1 5.4c0 1.2.2 2 .5 2.7.3.8.7 1.4 1.3 2 .6.6 1.2 1 2 1.3.7.3 1.5.5 2.7.5C8.9 24 9.3 24 12 24s3.1 0 4.2-.1c1.2 0 2-.2 2.7-.5.8-.3 1.4-.7 2-1.3.6-.6 1-1.2 1.3-2 .3-.7.5-1.5.5-2.7.1-1.1.1-1.5.1-5.4s0-4.3-.1-5.4c0-1.2-.2-2-.5-2.7-.3-.8-.7-1.4-1.3-2-.6-.6-1.2-1-2-1.3-.7-.3-1.5-.5-2.7-.5C15.1 0 14.7 0 12 0Zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4Zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-10.4a1.4 1.4 0 1 1-2.9 0 1.4 1.4 0 0 1 2.9 0Z" />
@@ -47,7 +51,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-yellow-400 transition hover:bg-yellow-500 hover:text-black"
+          className={`flex h-12 w-12 items-center justify-center rounded-full text-white transition hover:opacity-80 ${s.bg}`}
         >
           {s.icon}
         </a>
