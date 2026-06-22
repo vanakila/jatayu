@@ -1,3 +1,5 @@
+import { socials } from "@/lib/socials";
+
 export default function Footer() {
   return (
     <footer className="border-t-4 border-yellow-500 bg-black text-gray-300">
@@ -6,6 +8,20 @@ export default function Footer() {
           <div>
             <p className="font-bold text-yellow-400">JATAYU POMOSDA</p>
             <p className="mt-1">Jamaah Tatanan Wahyu</p>
+            <div className="mt-3 flex gap-2">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className={`flex h-8 w-8 items-center justify-center rounded-full text-white transition hover:opacity-80 ${s.bg}`}
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
           <div>
             <p className="font-bold text-yellow-400">Kontak</p>
@@ -33,7 +49,16 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-6 border-t border-gray-800 pt-4 text-center text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} Pondok Jatayu Pomosda. Seluruh hak cipta dilindungi.
+          &copy; {new Date().getFullYear()} Pondok Jatayu Pomosda. Seluruh hak cipta dilindungi. &middot;
+          Developed by{" "}
+          <a
+            href="http://stt-developer.pomosda.id/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-400"
+          >
+            STT-DEVELOPER
+          </a>
         </p>
       </div>
     </footer>
