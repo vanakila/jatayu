@@ -58,7 +58,9 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-6 border-t border-gray-800 pt-4 text-center text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} Jatayu. Seluruh hak cipta dilindungi. &middot;
+          &copy;{" "}
+          {new Date().getFullYear()}{" "}
+          Jatayu&nbsp;&nbsp;Seluruh hak cipta dilindungi. &middot;{" "}
           Developed by{" "}
           <a
             href="http://stt-developer.pomosda.id/"
