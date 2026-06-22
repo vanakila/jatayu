@@ -14,7 +14,7 @@ export const socials = [
   {
     label: "Facebook",
     name: "Kiai Tanjung",
-    href: "#",
+    href: "https://www.facebook.com/share/1EQYYeFEzP/",
     ready: true,
     bg: "bg-[#1877F2]",
     icon: (
