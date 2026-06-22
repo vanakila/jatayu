@@ -1,7 +1,9 @@
 export const socials = [
   {
     label: "YouTube",
+    name: "Jatayu Nirwana",
     href: "https://www.youtube.com/channel/UCrQTojVP6NYbsbPTwbKPapQ",
+    ready: true,
     bg: "bg-[#FF0000]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
@@ -11,7 +13,9 @@ export const socials = [
   },
   {
     label: "Facebook",
+    name: "Kiai Tanjung",
     href: "#",
+    ready: true,
     bg: "bg-[#1877F2]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
@@ -21,7 +25,9 @@ export const socials = [
   },
   {
     label: "TikTok",
+    name: "Romo Kiai Tanjung",
     href: "https://www.tiktok.com/@romokiaitanjungofficial",
+    ready: true,
     bg: "bg-black",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
@@ -31,7 +37,9 @@ export const socials = [
   },
   {
     label: "Instagram",
+    name: "Instagram",
     href: "#",
+    ready: false,
     bg: "bg-gradient-to-tr from-[#FEDA75] via-[#D62976] to-[#4F5BD5]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
@@ -40,3 +48,14 @@ export const socials = [
     ),
   },
 ];
+
+export const whatsapp = {
+  label: "WhatsApp",
+  href: "https://wa.me/6285232912963",
+  bg: "bg-[#25D366]",
+  icon: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
+      <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.9-.4-1.8-1-2.6-1.8-.7-.7-1.4-1.6-1.8-2.5-.1-.3 0-.5.1-.6.2-.2.4-.4.6-.7.2-.2.1-.4 0-.6L9 6.6c-.2-.3-.4-.3-.6-.3h-.6c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 1.6 2.6 4 3.7 2 1 2.4.8 2.9.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.2-.2-.2-.5-.4ZM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z" />
+    </svg>
+  ),
+};

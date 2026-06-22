@@ -1,4 +1,4 @@
-import { socials } from "@/lib/socials";
+import { socials, whatsapp } from "@/lib/socials";
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
             <p className="font-bold text-yellow-400">JATAYU POMOSDA</p>
             <p className="mt-1">Jamaah Tatanan Wahyu</p>
             <div className="mt-3 flex gap-2">
-              {socials.map((s) => (
+              {socials.filter((s) => s.ready).map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
@@ -21,6 +21,15 @@ export default function Footer() {
                   {s.icon}
                 </a>
               ))}
+              <a
+                href={whatsapp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={whatsapp.label}
+                className={`flex h-8 w-8 items-center justify-center rounded-full text-white transition hover:opacity-80 ${whatsapp.bg}`}
+              >
+                {whatsapp.icon}
+              </a>
             </div>
           </div>
           <div>
