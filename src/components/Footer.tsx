@@ -2,7 +2,10 @@ import { socials, whatsapp } from "@/lib/socials";
 
 export default function Footer() {
   return (
-    <footer className="border-t-4 border-yellow-500 bg-black text-gray-300">
+    <footer
+      className="border-t-4 border-yellow-500 bg-black bg-repeat text-gray-300"
+      style={{ backgroundImage: "url(/social-bg.jpg)", backgroundSize: "auto 100%" }}
+    >
       <div className="mx-auto max-w-6xl px-4 py-8 text-sm">
         <div className="grid gap-6 md:grid-cols-3">
           <div>

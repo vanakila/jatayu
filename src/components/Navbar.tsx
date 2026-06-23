@@ -30,7 +30,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black text-white border-b-4 border-yellow-500">
+    <header
+      className="sticky top-0 z-50 border-b-4 border-yellow-500 bg-black bg-repeat text-white"
+      style={{ backgroundImage: "url(/social-bg.jpg)", backgroundSize: "auto 100%" }}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image src="/logo.png" alt="Logo Jatayu Pomosda" width={44} height={44} />
