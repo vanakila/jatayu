@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { compressImage } from "@/lib/compressImage";
 
 type SlideUploadFormProps = {
   action: (formData: FormData) => void;
@@ -20,8 +21,9 @@ export default function SlideUploadForm({ action }: SlideUploadFormProps) {
 
     setUploading(which);
     try {
+      const compressed = await compressImage(file);
       const body = new FormData();
-      body.append("file", file);
+      body.append("file", compressed);
       const res = await fetch("/api/upload", { method: "POST", body });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
