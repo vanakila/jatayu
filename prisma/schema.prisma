@@ -47,7 +47,8 @@ model VisiMisi {
 }
 
 model HeroSlide {
-  id        String   @id @default(cuid())
-  imageUrl  String
-  createdAt DateTime @default(now())
+  id             String   @id @default(cuid())
+  imageUrl       String
+  imageUrlMobile String?
+  createdAt      DateTime @default(now())
 }

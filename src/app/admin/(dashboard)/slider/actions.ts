@@ -7,6 +7,7 @@ const MAX_SLIDES = 6;
 
 export async function createHeroSlide(formData: FormData) {
   const imageUrl = formData.get("url") as string;
+  const imageUrlMobile = (formData.get("urlMobile") as string) || null;
   if (!imageUrl) return;
 
   const count = await prisma.heroSlide.count();
@@ -14,7 +15,7 @@ export async function createHeroSlide(formData: FormData) {
     throw new Error(`Maksimal ${MAX_SLIDES} gambar slider. Hapus salah satu dulu.`);
   }
 
-  await prisma.heroSlide.create({ data: { imageUrl } });
+  await prisma.heroSlide.create({ data: { imageUrl, imageUrlMobile } });
   revalidatePath("/");
   revalidatePath("/admin/slider");
 }

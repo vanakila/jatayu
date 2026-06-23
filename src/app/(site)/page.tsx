@@ -21,7 +21,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      <HeroSlider images={slides.map((s) => s.imageUrl)} />
+      <HeroSlider slides={slides} />
 
       <SocialLinks />
 
