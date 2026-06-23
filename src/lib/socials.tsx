@@ -4,6 +4,7 @@ export const socials = [
     name: "Jatayu Nirwana",
     href: "https://www.youtube.com/channel/UCrQTojVP6NYbsbPTwbKPapQ",
     ready: true,
+    image: "/social-youtube.png",
     bg: "bg-[#FF0000]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
@@ -16,6 +17,7 @@ export const socials = [
     name: "Kiai Tanjung",
     href: "https://www.facebook.com/share/1EQYYeFEzP/",
     ready: true,
+    image: "/social-facebook.png",
     bg: "bg-[#1877F2]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
@@ -28,6 +30,7 @@ export const socials = [
     name: "Romo Kiai Tanjung",
     href: "https://www.tiktok.com/@romokiaitanjungofficial",
     ready: true,
+    image: "/social-tiktok.png",
     bg: "bg-black",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
@@ -40,6 +43,7 @@ export const socials = [
     name: "Instagram",
     href: "#",
     ready: false,
+    image: "/social-instagram.png",
     bg: "bg-gradient-to-tr from-[#FEDA75] via-[#D62976] to-[#4F5BD5]",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-full w-full p-1.5">
