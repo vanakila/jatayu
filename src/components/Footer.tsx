@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-8 text-sm">
         <div className="grid gap-6 md:grid-cols-3">
           <div>
-            <p className="font-bold text-yellow-400">JATAYU POMOSDA</p>
+            <p className="font-bold text-yellow-400">JATAYU</p>
             <p className="mt-1">Jamaah Tatanan Wahyu</p>
             <div className="mt-3 flex gap-2">
               {socials.filter((s) => s.ready).map((s) => (
