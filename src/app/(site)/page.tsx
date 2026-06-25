@@ -18,7 +18,7 @@ export default async function HomePage() {
       take: 3,
     }),
     prisma.heroSlide.findMany({ orderBy: { createdAt: "asc" } }),
-    prisma.galleryImage.findMany({ orderBy: { createdAt: "desc" }, take: 8 }),
+    prisma.galleryImage.findMany({ orderBy: { createdAt: "desc" }, take: 6 }),
   ]);
 
   return (
@@ -89,9 +89,9 @@ export default async function HomePage() {
         {galeri.length === 0 ? (
           <p className="text-gray-500">Belum ada foto.</p>
         ) : (
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {galeri.map((img) => (
-              <div key={img.id} className="relative aspect-square overflow-hidden rounded-lg border border-gray-200">
+              <div key={img.id} className="relative aspect-video overflow-hidden rounded-lg border border-gray-200">
                 <Image src={img.url} alt={img.caption ?? "Galeri Jatayu Pomosda"} fill className="object-cover" />
               </div>
             ))}
